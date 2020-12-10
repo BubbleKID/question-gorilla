@@ -13,7 +13,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
+      template: path.resolve(__dirname, 'index.html'),
     }),
     // new UglifyJsPlugin(),
   ],
@@ -37,7 +37,7 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
       },
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)?$/,
         use: [
           {
             loader: 'babel-loader',
