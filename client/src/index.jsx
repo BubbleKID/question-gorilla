@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import ThemeApp from './Theme';
 
 ReactDOM.render(
-  <Root history={history} routes={routes} store={store} />,
-  document.getElementById('app-container')
+  <Provider store={store}>
+    <ThemeApp />
+  </Provider>,
+  document.querySelector('#root'),
 );
